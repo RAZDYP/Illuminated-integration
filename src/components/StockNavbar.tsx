@@ -18,24 +18,24 @@ const top100Films = [
 ];
 function StockNavbar() {
   return (
-    <div className="stock-navbar w-100">
-      <div className="col-md-7 stock-navbar-left-div">
-        <div className="sidebar-search mb-0 col-md-4 ">
+    <div className="stock-navbar">
+      <div className="stock-navbar-left-div">
+        <div className="sidebar-search  ">
           <img src={SearchIcon} alt="Search Icon" />
           <input
             type="text"
-            className="border-0  sidebar-search-text"
+            className=" sidebar-search-text"
             style={{ outline: "none" }}
             placeholder="Search items"
           />
         </div>
-        <div className="col-md-2">
-          <button className="w-75 stock-navbar-filter-button">
-            <p className="m-0">Filters</p>
+        <div>
+          <button className="stock-navbar-filter-button">
+            <p className="font-inter-margin-0">Filters</p>
             <img src={DownArrowIcon} alt="Down Arrow Icon" />
           </button>
         </div>
-        <div className="col-md-4">
+        <div>
           <Autocomplete
             style={{ fontSize: "16px" }}
             size="md"
@@ -49,21 +49,21 @@ function StockNavbar() {
           ></Autocomplete>
         </div>
       </div>
-      <div className="col-md-4 stock-navbar-right-div">
-        <div className="col-md-3">
-          <button className=" w-100 stock-navbar-add-item-button">
+      <div className=" stock-navbar-right-div">
+        <div>
+          <button className="stock-navbar-add-item-button">
             <img src={PlusCircleIcon} alt="" />
-            <p className="m-0">Add Item</p>
+            <p className="font-inter-margin-0">Add Item</p>
           </button>
         </div>
-        <div className="col-md-3">
-          <button className=" w-100 stock-navbar-filter-button">
-            <p className="m-0">Item actions</p>
+        <div>
+          <button className="stock-navbar-filter-button">
+            <p className="font-inter-margin-0">Item actions</p>
             <img src={DownArrowIcon} alt="Down Arrow Icon" />
           </button>
         </div>
 
-        <div className="">
+        <div>
           <button className="stock-navbar-column-button">
             <img src={ColumnIcon} alt="" />
           </button>

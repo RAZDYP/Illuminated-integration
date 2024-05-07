@@ -23,30 +23,33 @@ import List from "@mui/joy/List";
 import ListItem from "@mui/joy/ListItem";
 import ListItemButton from "@mui/joy/ListItemButton";
 
+// MATERIAL UI
+import Box from "@mui/material/Box";
+
 const Sidebar = () => {
   return (
-    <div className="sidebar">
+    <div className="sidebar" style={{ height: "100vh" }}>
       <div className="sidebar-main-body">
-        <div className="sidebar-header ">
+        <Box className="sidebar-header ">
           <img src={IlluminatedLogo} alt="Illuminated Logo" />
-          <h3 className="m-0 sidebar-header-text">Illuminated</h3>
-        </div>
-        <div className="sidebar-search  w-100">
+          <h3 className="sidebar-header-text">Illuminated</h3>
+        </Box>
+        <Box className="sidebar-search" sx={{ marginBottom: "24px" }}>
           <img src={SearchIcon} alt="Search Icon" />
           <input
             type="text"
-            className="border-0  sidebar-search-text"
-            style={{ outline: "none" }}
+            className="sidebar-search-text"
             placeholder="Search"
           />
-        </div>
-        <button className="sidebar-dashboard-button p-0">
+        </Box>
+        <button className="sidebar-dashboard-button">
           <img src={BarchartIcon} alt="Bar Chart Icon" />
-          <p className="m-0">Dashboard</p>
+          <p className="font-inter" style={{ marginBottom: "12px" }}>
+            Dashboard
+          </p>
         </button>
         <div>
           <AccordionGroup
-            className="mb-2"
             size="lg"
             sx={{ maxWidth: 400 }}
             transition={{
@@ -54,8 +57,16 @@ const Sidebar = () => {
               expanded: "0.2s ease",
             }}
           >
-            <Accordion className="sidebar-accordian border-0">
-              <AccordionSummary className="p-0">
+            <Accordion
+              sx={{
+                border: "none",
+              }}
+            >
+              <AccordionSummary
+                sx={{
+                  padding: "0px",
+                }}
+              >
                 <div className="sidebar-accordian-button">
                   <img src={FolderIcon} alt="Folder Icon" />
                   <p className="m-0 sidebar-accordian-button-text">Projects</p>
@@ -93,8 +104,16 @@ const Sidebar = () => {
                 </List>
               </AccordionDetails>
             </Accordion>
-            <Accordion className="sidebar-accordian border-0">
-              <AccordionSummary className="p-0">
+            <Accordion
+              sx={{
+                border: "none",
+              }}
+            >
+              <AccordionSummary
+                sx={{
+                  padding: "0px",
+                }}
+              >
                 <div className="sidebar-accordian-button">
                   <img src={UsersIcon} alt="Folder Icon" />
                   <p className="m-0 sidebar-accordian-button-text">Stocks</p>
@@ -132,8 +151,16 @@ const Sidebar = () => {
                 </List>
               </AccordionDetails>
             </Accordion>
-            <Accordion className="sidebar-accordian border-0">
-              <AccordionSummary className="p-0">
+            <Accordion
+              sx={{
+                border: "none",
+              }}
+            >
+              <AccordionSummary
+                sx={{
+                  padding: "0px",
+                }}
+              >
                 <div className="sidebar-accordian-button">
                   <img src={UsersIcon} alt="Folder Icon" />
                   <p className="m-0 sidebar-accordian-button-text">Clients</p>
@@ -171,8 +198,16 @@ const Sidebar = () => {
                 </List>
               </AccordionDetails>
             </Accordion>
-            <Accordion className="sidebar-accordian border-0">
-              <AccordionSummary className="p-0">
+            <Accordion
+              sx={{
+                border: "none",
+              }}
+            >
+              <AccordionSummary
+                sx={{
+                  padding: "0px",
+                }}
+              >
                 <div className="sidebar-accordian-button">
                   <img src={CartIcon} alt="Folder Icon" />
                   <p className="m-0 sidebar-accordian-button-text">
@@ -214,30 +249,37 @@ const Sidebar = () => {
             </Accordion>
           </AccordionGroup>
         </div>
-        <button className="sidebar-dashboard-button p-0">
+        <button className="sidebar-dashboard-button">
           <img src={FileIcon} alt="Bar Chart Icon" />
-          <p className="m-0">Reporting</p>
+          <p className="font-inter">Reporting</p>
         </button>
       </div>
       <div className="sidebar-footer-body">
-        <button className="sidebar-dashboard-button p-0">
+        <button className="sidebar-dashboard-button">
           <img src={ProfileIcon} alt="Bar Chart Icon" />
-          <p className="m-0">Profile</p>
+          <p className="font-inter">Profile</p>
         </button>
-        <button className="sidebar-dashboard-button p-0">
+        <button className="sidebar-dashboard-button">
           <img src={SettingsIcon} alt="Bar Chart Icon" />
-          <p className="m-0">Settings</p>
+          <p className="font-inter">Settings</p>
         </button>
-        <button className="sidebar-dashboard-button p-0">
+        <button className="sidebar-dashboard-button">
           <img src={InfoIcon} alt="Bar Chart Icon" />
-          <p className="m-0">Help</p>
+          <p className="font-inter">Help</p>
         </button>
         <hr style={{ backgroundColor: "#EAECF0" }}></hr>
-        <button className="sidebar-footer-bottom w-100">
+        <button className="sidebar-footer-bottom">
           <img src={ProfileRoundedIcon} alt="Profile Rounded Icon" />
           <div className="sidebar-footer-button-text">
-            <p className="m-0">David Hockenberry</p>
-            <small className="opacity-75">dh@dummymail.com</small>
+            <p
+              className="font-inter"
+              style={{ margin: "0px", fontSize: "13px" }}
+            >
+              David Hockenberry
+            </p>
+            <small style={{ margin: "0px", opacity: "0.8" }}>
+              dh@dummymail.com
+            </small>
           </div>
           <img src={LogOutIcon} alt="Log Out Icon" />
         </button>

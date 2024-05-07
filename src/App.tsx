@@ -1,22 +1,28 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/js/bootstrap.bundle.min";
 import "@fontsource/inter";
 
 // COMPONENTS
 import Sidebar from "./components/Sidebar";
 import StockNavbar from "./components/StockNavbar";
 import Table from "./components/Table";
+import Box from "@mui/material/Box";
 const App = () => {
   return (
     <>
-      <div className="d-flex">
+      <div style={{ display: "flex" }}>
         <Sidebar />
-        <div className="stocks-main-body w-100">
+        <Box
+          sx={{
+            width: "100%",
+            padding: "32px 24px",
+          }}
+        >
           <StockNavbar />
-          <div style={{ height: 400, width: "100%" }}>
+          <Box sx={{ height: 400, width: "100%" }}>
             <Table />
-          </div>
-        </div>
+          </Box>
+        </Box>
       </div>
     </>
   );

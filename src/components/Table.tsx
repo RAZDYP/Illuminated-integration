@@ -9,6 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Avatar1Icon from "/images/table/Avatar-1.png";
 import LinearProgress from "@mui/material/LinearProgress";
+import { Box } from "@mui/system";
 
 interface DisplayTableRows {
   id: number;
@@ -110,11 +111,17 @@ export default function DataTable() {
 
   return (
     <>
+      <div style={{ marginTop: "32px" }}></div>
+
       <Paper
-        sx={{ width: "100%", overflow: "hidden" }}
-        style={{ boxShadow: "none" }}
+        sx={{
+          width: "100%",
+          overflow: "hidden",
+          border: "1px solid #d0d5dd",
+          borderRadius: "8px",
+          boxShadow: "none",
+        }}
       >
-        <div style={{ marginTop: "32px" }}></div>
         {loading ? (
           <LinearProgress
             color="secondary"
@@ -127,7 +134,7 @@ export default function DataTable() {
         ) : null}
 
         <TableContainer
-          className="table-scroll border"
+          className="table-scroll"
           component={Paper}
           ref={tableScrollDivRef}
         >
@@ -205,10 +212,16 @@ export default function DataTable() {
                     />
                   </TableCell>
                   <TableCell>
-                    <div className="d-flex align-items-center gap-2">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "10px",
+                      }}
+                    >
                       <img src={Avatar1Icon} alt="Avatar 1 Icon" />
                       <p className="font-style-inter">{row.model}</p>
-                    </div>
+                    </Box>
                   </TableCell>
 
                   <TableCell align="left">
@@ -227,12 +240,18 @@ export default function DataTable() {
                     <p className="font-style-inter">{row.category}</p>
                   </TableCell>
                   <TableCell align="left">
-                    <div className="d-flex gap-2">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
+                      }}
+                    >
                       <p className="table-badge-orange m-0">{row.tags[0]}</p>
                       <p className="table-badge-blue m-0">{row.tags[1]}</p>
                       <p className="table-badge-navy-blue m-0">{row.tags[2]}</p>
                       <p className="table-badge-navy-gray">{row.tags[3]}</p>
-                    </div>
+                    </Box>
                   </TableCell>
                   <TableCell align="left">
                     <p className="font-style-inter">{row.onHand}</p>
